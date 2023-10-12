@@ -1,0 +1,26 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+#resultat {
+  display: flex;
+  gap: 1rem;
+}
+
+article {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+form {
+  margin: 1rem;
+}
+
+#cityName,
+#countryName {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem;
+}
