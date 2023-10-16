@@ -12,6 +12,7 @@ function soumission(event) {
       let hasAlreadyCity = [];
       document.getElementById("cityName").innerText = dataRes.city.name;
       document.getElementById("countryName").innerText = dataRes.city.country;
+      document.getElementById("resultat").innerHTML = "";
       dataRes.list.forEach((item) => {
         const date = getDateFromString(item.dt_txt);
         if (!hasAlreadyCity.includes(date)) {
@@ -19,16 +20,15 @@ function soumission(event) {
           <h2>${date}</h2>
           <p>min: ${item.main.temp_min}</p>
           <p>max: ${item.main.temp_max}</p>
-          <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png">
+          <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png" title="${item.weather[0].description}">
           </article>`
 
           hasAlreadyCity.push(date);
         }
       })
-      // document.getElementById("resultat").innerHTML = code;
     }
   };
-  xhttp.open("GET", `https://api.openweathermap.org/data/2.5/forecast?q=${nom}&APPID=${import.meta.env.VITE_API_KEY}&units=metric`, true);
+  xhttp.open("GET", `https://api.openweathermap.org/data/2.5/forecast?q=${nom}&APPID=${import.meta.env.VITE_API_KEY}&units=metric&lang=fr`, true);
   xhttp.send();
 }
 

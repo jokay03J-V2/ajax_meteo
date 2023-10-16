@@ -9,13 +9,16 @@
 </head>
 
 <body>
+  <a href="./maps.html">maps</a>
   <form action="" id="form">
     <label for="nom">Nom :</label>
-    <input id="nom" type="text" name="nom" placeholder="Nom" />
+    <input id="nom" type="text" name="nom" placeholder="Nom" autocomplete="country-name" />
     <input type="submit">
   </form>
-  <div id="cityName"></div>
-  <div id="countryName"></div>
+  <div id="infos">
+    <div id="cityName"></div>
+    <div id="countryName"></div>
+  </div>
   <div id="resultat">
   </div>
   <script type="module" src="./main.js"></script>
